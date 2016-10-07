@@ -1,21 +1,23 @@
 # /usr/bin/env python3
-
+import operator
+operators = {
+	'+': operator.add,
+	'-': operator.sub,
+	'*': operator.mul,
+	'/': operator.truediv,
+	
+}
 def calculate(myarg1):
 	stack = list()
 	for token in myarg1.split():
-		if token == '+':
-			arg2 = stack.pop()
-			arg1 = stack.pop()
-			result = arg1 + arg2
-			stack.append(result)
-		elif token == '-':
-			arg2 = stack.pop()
-			arg1 = stack.pop()
-			result = arg1 - arg2
-			stack.append(result)
-		else:
+		try:
 			stack.append(int(token))
-		print(stack)
+		except ValueError:
+			arg2 =  stack.pop()
+			arg1 =  stack.pop()
+			fucntion = operators[token]
+			result = function(Arg1,arg2)
+			stack.append(result)				print(stack)
 	if len(stack) != 1:
 		raise TypeError
 	return stack.pop()
