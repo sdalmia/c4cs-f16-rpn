@@ -17,7 +17,8 @@ def calculate(myarg1):
 			arg1 =  stack.pop()
 			fucntion = operators[token]
 			result = function(Arg1,arg2)
-			stack.append(result)				print(stack)
+			stack.append(result)				
+	print(stack)
 	if len(stack) != 1:
 		raise TypeError
 	return stack.pop()
