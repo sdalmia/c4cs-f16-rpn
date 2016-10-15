@@ -10,7 +10,7 @@ class TestBasics(unittest.TestCase):
 		result = rpn.calculate("5 3 -")
 		self.assertEqual(2,result)
 
-	def test_substract(self):
+	def test_expo(self):
 		result = rpn.calculate("2 3 ^")
 		self.assertEqual(8,result)
 
